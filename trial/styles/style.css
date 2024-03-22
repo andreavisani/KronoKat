@@ -1,13 +1,13 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 /* Set background color and font family */
 body {
-    background-color: #333;
+    background-color: #5C469B;
     font-family: Arial, sans-serif;
     height: 100vh; /* Ensure the background covers the entire screen */
     padding-top: 40px;

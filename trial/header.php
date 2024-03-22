@@ -7,7 +7,7 @@
     </div>
 
     <ul class="navdiv-ul">
-        <li><a href="#" >Home</a></li>
+        <li><a href="index.php" >Home</a></li>
         <li><a href="./signup.php" class="active">Signup</a></li>
         <li><a href="./contact.html">Login</a></li>
     </ul>
