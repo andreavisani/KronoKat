@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>Signup</title>
 </head>
+
 <body>
-    
+
     <?php include('header.php'); ?>
 
     <div class="formcontainer">
         <h1>Sign-Up</h1>
         <hr>
         <form action="process-signup.php" method="post" onsubmit="return validate();">
-            
+
             <div class="textfield">
                 <label for="firstName">First Name</label>
                 <input type="text" name="fName" id="fname" placeholder="First Name">
@@ -34,7 +36,7 @@
                 <label for="email">Email Address</label>
                 <input type="text" name="email" id="email" placeholder="Email">
             </div>
-            
+
             <div class="textfield">
                 <label for="login">User Name</label>
                 <input type="text" name="login" id="login" placeholder="User name">
@@ -44,7 +46,7 @@
                 <label for="pass">Password</label>
                 <input type="password" name="pass" id="pass" placeholder="Password">
             </div>
-        
+
             <div class="textfield">
                 <label for="pass2">Re-type Password</label>
                 <input type="password" id="pass2" placeholder="Password">
@@ -62,6 +64,5 @@
     </div>
     <script src="./js/script.js"></script>
 </body>
+
 </html>
-
-
