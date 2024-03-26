@@ -1,3 +1,10 @@
+
+
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +17,11 @@
 <body>
     
     <!-- SET THE CONNECTION -->
-    <?php 
-    require_once('./database/db_credentials.php');
-    require_once('./database/database.php');
+    <?php
+    $mysqli = require __DIR__ . "/database.php";
+    $user_id = mysqli_real_escape_string($mysqli, $_SESSION['users_id']);
 
-    $db = db_connect();
+
     ?>
 
     
@@ -27,11 +34,12 @@
                         FROM tasks 
                         JOIN users_tasks ON tasks.id = users_tasks.task_id 
                         LEFT JOIN projects ON tasks.project_id = projects.id 
-                        WHERE users_tasks.user_id = 10 
+                        WHERE users_tasks.user_id = '$user_id'
                         ORDER BY tasks.due_date ASC;";
                 //echo $sql;
-                $result_set = mysqli_query($db,$sql);
+                $result_set = mysqli_query($mysqli,$sql);
             ?>
+
             <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
                 <div style="border: 2px solid black; background-color: grey; max-width: 300px; margin-block: 0.5rem; margin-inline: auto; border-radius: 10px; padding: 1rem;">
                     <p style="color:white;"><b><?php echo $results['name']; ?></b></p>
@@ -57,10 +65,10 @@
                         FROM tasks 
                         JOIN users_tasks ON tasks.id = users_tasks.task_id 
                         JOIN projects ON tasks.project_id = projects.id 
-                        WHERE users_tasks.user_id = 10 -- WE NEED TO REPLACE THIS USER ID WITH THE VARIABLE COMING FROM POST
+                        WHERE users_tasks.user_id = '$user_id' -- WE NEED TO REPLACE THIS USER ID WITH THE VARIABLE COMING FROM POST
                         AND DATE(tasks.start_date) = CURDATE();";
                 //echo $sql;
-                $result_set = mysqli_query($db,$sql);
+                $result_set = mysqli_query($mysqli,$sql);
             ?>
             <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
                 <div style="border: 2px solid black; background-color: grey; max-width: 300px; margin-block: 0.5rem; margin-inline: auto; border-radius: 10px; padding: 1rem;">
@@ -87,11 +95,11 @@
                         FROM tasks 
                         JOIN users_tasks ON tasks.id = users_tasks.task_id 
                         JOIN projects ON tasks.project_id = projects.id 
-                        WHERE users_tasks.user_id = 10 -- WE NEED TO REPLACE THIS USER ID WITH THE VARIABLE COMING FROM POST
+                        WHERE users_tasks.user_id = '$user_id'-- WE NEED TO REPLACE THIS USER ID WITH THE VARIABLE COMING FROM POST
                         AND CURDATE() BETWEEN DATE(tasks.start_date) AND DATE(tasks.due_date)
                         ORDER BY tasks.due_date ASC;";
                 //echo $sql;
-                $result_set = mysqli_query($db,$sql);
+                $result_set = mysqli_query($mysqli,$sql);
             ?>
             <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
                 <div style="border: 2px solid black; background-color: grey; max-width: 300px; margin-block: 0.5rem; margin-inline: auto; border-radius: 10px; padding: 1rem;">

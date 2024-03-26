@@ -9,7 +9,7 @@
     <ul class="navdiv-ul">
         <li><a href="#" >Home</a></li>
         <li><a href="./signup.php" class="active">Signup</a></li>
-        <li><a href="./contact.html">Login</a></li>
+        <li><a href="./login.php">Login</a></li>
     </ul>
 
     <div class="hamburger">

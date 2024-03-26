@@ -14,9 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if($user) {
         if (password_verify($_POST["password"],$user["password"])){
+
             session_start(); 
             $_SESSION["users_id"] = $user['id'];
-            header('Location: ./index.php');
+            header('Location: ./home.php');
             exit; 
         }
     }
