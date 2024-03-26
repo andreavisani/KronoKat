@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$dbname = "login_db";
+$dbname = "kronokat";
 $username = "root";
 $password = "";
 

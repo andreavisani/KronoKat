@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $mysqli = require __DIR__ . "/database.php";
     
-    $sql = "SELECT * FROM user WHERE username = ?";
+    $sql = "SELECT * FROM users WHERE login = ?";
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("s", $_POST["login"]);
     $stmt->execute();
@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $result->fetch_assoc();
 
     if($user) {
-        if (password_verify($_POST["password"],$user["password_hash"])){
+        if (password_verify($_POST["password"],$user["password"])){
             session_start(); 
-            $_SESSION["user_id"] = $user['id'];
+            $_SESSION["users_id"] = $user['id'];
             header('Location: ./index.php');
             exit; 
         }

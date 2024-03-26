@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mysqli = require __DIR__ . "/database.php";
 
     // SQL statement
-    $sql = "INSERT INTO user (first_name, last_name, email, password_hash, username)
+    $sql = "INSERT INTO users (first_name, last_name, email, password, login)
             VALUES (?, ?, ?, ?, ?)";
 
     // Prepare the statement
