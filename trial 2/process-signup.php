@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssss", $_POST['fName'], $_POST['lName'], $_POST['email'], $password_hash, $_POST['login']);
 
     if ($stmt->execute()) {
-        header("Location: ./success.php");
+        header("Location: ./login.php");
         exit; // Stop script execution to prevent further output
     } else {
         die("Error executing statement: " . $stmt->error);

@@ -4,18 +4,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" type="text/css" href="./styles/stylesignup.css">
         <title>Signup</title>
     </head>
     
     <body>
         <div class="formcontainer">
-            <h1>Sign-Up</h1>
+            <h1>KRRONOKAT</h1>
             <hr>
             <form action="process-signup.php" method="post" onsubmit="return validate();">
                 
                 <div class="textfield">
-                    <label for="firstName">First Name</label>
+                    <label for="firstName">First Name </label>
                     <input type="text" name="fName" id="fname" placeholder="First Name">
                 </div>
     
@@ -51,15 +51,15 @@
     
                 <div class="checkbox">
                     <input type="checkbox" name="terms" id="terms">
-                    <label for="terms">I agree to the terms and conditions</label>
+                    <label for="terms">I Agree to the terms and conditions</label>
                 </div>
-    
+                <div class="button">
                 <button type="submit">Sign-Up</button>
-                <button type="reset">Reset</button>
+                </div>
     
             </form>
         </div>
-        <script src="./js/script.js"></script>
+        <script src="./js/scriptsignup.js"></script>
     </body>
 </html>
     

@@ -30,18 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" type="text/css" href="./styles/styleslogin.css">
 </head>
 <body>
-    
-    <h1>Login</h1>
-
+    <div class="formcontainer">
+    <h1>KRRONOKAT</h1>
     <?php
         if ($is_invalid): ?>
         <em>Invalid Login</em>
     <?php endif; ?>
 
-    
     <form method="post">
         <label for="User-name">User-Name</label>
         <input type="text" name="login" id="login">
@@ -49,8 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label for="password">Password</label>
         <input type="password" name="password" id="password">
         
-        <button>Log in</button>
+        <div class="button">
+                <button type="submit">Login</button>
+        </div>
     </form>
+    </div>
     
 </body>
 </html>

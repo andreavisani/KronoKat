@@ -12,12 +12,12 @@ function validate() {
     var isValid = true;
     // validate firstname 
     if(fname.length === 0 || fname.length >30){
-        showError("fname"); 
+        errorTime("fname"); 
         isValid = false; 
     }
     // validate lastname
     if(lname.length === 0 || lname.length >30){
-        showError("lname"); 
+        errorTime("lname"); 
         isValid = false; 
     }
     
@@ -29,7 +29,7 @@ function validate() {
 
     // Validate login
     if (login.length === 0 || login.length > 30) {
-        showError("login");
+        errorTime("login");
         isValid = false;
     }
 
@@ -72,7 +72,7 @@ function showError(field, message) {
     parentDiv.appendChild(errorSpan);
 }
 
-function showError(field) {
+function errorTime(field) {
     var inputField = document.getElementById(field);
     inputField.style.borderColor = "red";
 }
