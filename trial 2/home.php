@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 <button id="openPopup">New Taks</button>
                 <div id="popup" class="popup">
-                    <form action="home.php" method="POST" style="padding: 1rem; display: grid; grid-template-columns: 2;">
+                    <form action="home.php" method="POST" style="padding: 1rem; display: grid; grid-template-columns: 2; gap: 0.5rem;">
                         <label class="col1" for="name">Name:</label>
                         <input class="col2" type="text" id="name" name="name" required>
                         <label class="col1" for="location">Location:</label>
@@ -95,7 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input class="col2" type="datetime-local" id="start_date" name="start_date" required/>
                         <label class="col1" for="due_date">Due date</label>
                         <input class="col2" type="datetime-local" id="due_date" name="due_date" required/>
-                        <input id="create_task" type="submit" value="Create new task">
+                        <input class="col1" id="create_task" type="submit" value="Create new task">
+                        <input class="col2" id="reset_task" type="reset" value="Reset">
                     </form>
                 </div>
                 
@@ -111,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $result_set = mysqli_query($mysqli,$sql);
             ?>
                 <div>
-                    <span style="margin-left: 38px;">Name</span> <span style="float: right; margin-right: 60px;">Due date</span>
+                    <span style="margin-left: 38px;">Name <img id="sort-name" src="./images/apps-sort.png" style="width: 20px;"></span> <span style="float: right; margin-right: 60px;">Due date <img id="sort-date" src="./images/apps-sort.png" style="width: 20px;"></span> 
                 </div>
             <ul id="task-list">
                 <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
@@ -123,84 +124,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $dueDate = date("M. d   H:i", strtotime($results['due_date']));
                         echo $dueDate; ?></p>
                         </div>
-                        <p class="close">×</p>
+                        <a class="close" href="<?php echo "deleteTask.php?id=" . $results['id']; ?>">×</a>  
                     </li>
                     
                 <?php } ?>                
             </ul>
         </div>
-
-        
-        <!-- ONGOING 
-        <div style="border: 2px solid black; background-color: white; margin-block: 0.5rem; margin-inline: auto; border-radius: 10px; padding: 2rem;">
-            <h3>Ongoing Tasks</h3>
-            <?php 
-                $sql = "SELECT tasks.*, IFNULL(projects.name, '') AS 'project' 
-                        FROM tasks 
-                        JOIN users_tasks ON tasks.id = users_tasks.task_id 
-                        JOIN projects ON tasks.project_id = projects.id 
-                        WHERE users_tasks.user_id = '$user_id'-- WE NEED TO REPLACE THIS USER ID WITH THE VARIABLE COMING FROM POST
-                        AND CURDATE() BETWEEN DATE(tasks.start_date) AND DATE(tasks.due_date)
-                        ORDER BY tasks.due_date ASC;";
-                //echo $sql;
-                $result_set = mysqli_query($mysqli,$sql);
-            ?>
-            <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
-                <div style="border: 2px solid black; background-color: grey; max-width: 300px; margin-block: 0.5rem; margin-inline: auto; border-radius: 10px; padding: 1rem;">
-                    <p style="color:white;"><b><?php echo $results['name']; ?></b></p>
-                    <p><b>Location: </b><?php echo $results['location']; ?></p>
-                    <p><b>Description: </b><?php echo $results['description'] ; ?></p>
-                    <p><b>Start date: </b><?php echo $results['start_date']; ?></p>
-                    <p><b>Due date: </b><?php echo $results['due_date']; ?></p>
-                    <p><b>Project name: </b><?php echo $results['project']; ?></p>
-                    <td><a class="action" href="<?php echo"show.php?id=" . $results['id']; ?>">View</a></td>
-                    <td><a class="action" href="<?php echo "edit.php?id=" . $results['id']; ?>">Edit</a></td>
-                    <td><a class="action" href="<?php echo "delete.php?id=" . $results['id']; ?>">delete</a></td>
-                    <td><a class="action" href="<?php echo "showUsersTasks.php?id=" . $results['id']; ?>">View tasks</a></td>
-                    
-                </div>
-            <?php } ?> -->
-        </div>
-
-
-
-
-
-
     </div>
 
-
-
-    
-        <?php
-        
-
-    ?>
-
     <script>
-    // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-      }
-    }
-    
-    // Add a "checked" symbol when clicking on a list item
-    var list = document.querySelector('ul');
-    list.addEventListener('click', function(ev) {
-    // Check if the clicked target is either the <li> or one of its children
-    var clickedElement = ev.target;
-    while (clickedElement && clickedElement !== list) {
-        if (clickedElement.tagName === 'LI') {
-            clickedElement.classList.toggle('checked');
-            break;
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
         }
-        clickedElement = clickedElement.parentNode;
-    }
-}, false);
+        }
+        
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function(ev) {
+            // Check if the clicked target is either the <li> or one of its children
+            var clickedElement = ev.target;
+            while (clickedElement && clickedElement !== list) {
+                if (clickedElement.tagName === 'LI') {
+                    clickedElement.classList.toggle('checked');
+                    break;
+                }
+                clickedElement = clickedElement.parentNode;
+            }
+        }, false);
+        
     </script>
     
 
