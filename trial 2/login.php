@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             session_start(); 
             $_SESSION["users_id"] = $user['id'];
-            header('Location: ./home.php');
+            header('Location: ./dashboard.php');
             exit; 
         }
     }

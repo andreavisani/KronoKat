@@ -7,10 +7,8 @@
         <link rel="stylesheet" type="text/css" href="styles/style.css">
         <title>Signup</title>
     </head>
-    <body>
-        
-        <?php include('header.php'); ?>
     
+    <body>
         <div class="formcontainer">
             <h1>Sign-Up</h1>
             <hr>

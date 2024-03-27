@@ -20,8 +20,6 @@ session_start();
     <?php
     $mysqli = require __DIR__ . "/database.php";
     $user_id = mysqli_real_escape_string($mysqli, $_SESSION['users_id']);
-
-
     ?>
 
     
