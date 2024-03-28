@@ -1,4 +1,26 @@
 /* Reset some default margin and padding */
+@font-face {
+    font-family: 'Stretch'; /* Name your font */
+    src: url('../fonts/stretch_pro/StretchPro.otf') format('opentype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Munday'; /* Name your font */
+    src: url('../fonts/the_munday/Themundayfreeversion-Regular.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Louie'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Light.ttf') format('truetype'); /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Hack'; /* Name your font */
+    src: url('../fonts/hack/Hack-Italic.ttf') format('truetype'); /* Specify the path to your font file and format */
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -11,41 +33,66 @@ body {
     color: #333; /* Set default text color */
 }
 
-/* Global styling for sections */
-section {
-    padding: 50px 0;
-}
-
 /* Styling for Home section */
 .Home {
-    background-color: #3498db; /* Set a blue background color */
     color: #fff; /* Set text color to white */
+    height: 100vh; /* Set the height of the section to 100% of the viewport height */
+    background-image: url('../images/bgfinal.jpg'); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire section with the background image */
+    background-position: center; /* Center the background image */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    text-align: center; /* Center the text horizontally */
 }
+
 
 .features_container {
     display: flex;
-    justify-content: space-between; /* Features container on the left, KronoKat container on the right */
+    justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Set a maximum width for better alignment */
-    margin: 0 auto; /* Center the content horizontally */
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 0 auto; /* Center the container horizontally */
+    transition: transform 0.35s ease-out; /* Smooth transition */
+    height: 350px;
 }
 
+
+
 .features {
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white background */
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
     text-align: center;
+    color: #242424;
+    font-family: 'Louie';
+    font-size: 16px;
 }
 
 #kronokat_container {
     flex: 1; /* Take remaining space */
-    padding: 0 20px; /* Add some padding for better spacing */
+    padding: 20px 20px; /* Add some padding for better spacing */
+}
+
+#kronokat_container h1 {
+    font-size: 90px;
+    font-family: "Stretch";
+    color: #000000;
+}
+
+#kronokat_container p {
+    font-size: 25px;
+    font-family: 'Louie';
+    color: #242424;
 }
 
 /* Styling for About section */
 .About {
-    background-color: #fff; /* Set a white background color */
+    background: rgb(255,255,255);
 }
 
 .page-containers {
@@ -55,21 +102,34 @@ section {
 }
 
 .card-container {
-    background-color: #f9f9f9; /* Light gray background color */
+    background-color: #000000;
     padding: 20px;
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    flex: 1; /* Take equal space horizontally */
+    margin: 60px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    height: 600px;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out; /* Add a transition effect for smooth scaling */
 }
 
+.card-container:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+}
+
+
 .card-container h2 {
-    color: #333; /* Set heading color */
+    color: #ffffff; 
     margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Louie';
+    font-size: 50px;
 }
 
 .card-text-paragraph {
-    color: #666; /* Set paragraph text color */
+    margin-top: 20px;
+    color: #ffffff; /* Set paragraph text color */
+    font-family: "Louie";
 }
 
 /* Responsive design */

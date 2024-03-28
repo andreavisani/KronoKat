@@ -3,7 +3,7 @@
 
     <div class="logo">
         <image src="images/blackcat.png"></image>
-        <a href="#">KronoKat</a>
+        <a href="#">KRRONOKAT</a>
     </div>
 
     <ul class="navdiv-ul">

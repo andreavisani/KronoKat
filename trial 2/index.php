@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/headerindex.css">
     <title>KronoKat - Manage your tasks</title>
 </head>
 
@@ -16,45 +16,46 @@
     <section class="Home">
         <div class="features_container">
             <div id="Features">
-                <div class="features">MANAGE YOUR TASKS EASILY</div>
-                <div class="features">STAY ON TRACK WITH YOUR PROJECTS</div>
-                <div class="features">WORK WITHIN A TEAM</div>
+                <div class="features"><b>Supercharge Your Productivity</b></div>
+                <div class="features"><b>Collaborate Like a Professional</b></div>
+                <div class="features"><b>Effortless Task Management</b></div>
             </div>
 
             <div id="kronokat_container">
-                <h1>KronoKat</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce congue maximus suscipit. Phasellus ut justo fringilla, iaculis tellus eu, pulvinar purus.
-                    Nam mollis accumsan velit, id venenatis dolor blandit ut. Quisque bibendum gravida enim, id semper arcu.
-                </p>
+                <h1>KRRONOKAT</h1>
+                <p><em>Your personal task manager.</em></p>
             </div>
         </div>
     </section>
-
+    <script src="./js/indexscript.js"></script>
     <section class="About">
         <div class="page-containers">
             <div class="card-container">
-                <h2>Meow 1</h2>
+                <h2>Filter</h2>
                 <div class="card-text-paragraph">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae accusamus ipsum reiciendis officiis, ea molestiae corrupti recusandae ullam officia repellat nostrum, non asperiores modi, at et commodi architecto illum. Unde.
+                Discover the power of our app's streamlined task management system. Effortlessly find and access your tasks with precision and speed. <br>
+                <br>
+                Our intuitive interface ensures that tasks are organized and easily retrievable, saving you valuable time and maximizing productivity. Experience the convenience of locating tasks instantly, empowering you to stay focused and achieve more
                 </div>
             </div>
             <div class="card-container">
-                <h2>Meow 2</h2>
+                <h2>Organize</h2>
                 <div class="card-text-paragraph">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae accusamus ipsum reiciendis officiis, ea molestiae corrupti recusandae ullam officia repellat nostrum, non asperiores modi, at et commodi architecto illum. Unde.
+                Unlock the potential of our app to revolutionize your scheduling experience. Seamlessly organize your schedule with ease and efficiency. <br>
+                <br>
+                From appointments to deadlines, our intuitive platform empowers you to arrange and manage your time effectively. Experience the freedom of a well-structured schedule, allowing you to stay on track and accomplish your goals with confidence
                 </div>
             </div>
             <div class="card-container">
-                <h2>Meow 3</h2>
+                <h2>Collab</h2>
                 <div class="card-text-paragraph">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae accusamus ipsum reiciendis officiis, ea molestiae corrupti recusandae ullam officia repellat nostrum, non asperiores modi, at et commodi architecto illum. Unde.
+                Experience the collaborative power of our app, bringing teams together like never before. Seamlessly collaborate with colleagues, share updates, and delegate tasks effortlessly. <br>
+                <br>
+                collaboration regardless of distance. Empower your team to achieve collective goals with ease, fostering productivity and innovation
                 </div>
             </div>
         </div>
     </section>
-
-
 </body>
 
 </html>

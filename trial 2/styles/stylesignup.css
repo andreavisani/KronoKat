@@ -25,8 +25,8 @@ body {
     display: flex; /* Use flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgb(4, 1, 69) 0%, rgba(64,64,111,1) 35%, rgba(255,255,255,1) 100%);
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgb(219, 219, 219) 19%, rgb(174, 89, 147) 72%);
 }
 
 /* Container */
