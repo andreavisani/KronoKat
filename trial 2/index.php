@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/headerindex.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+
     <title>KronoKat - Manage your tasks</title>
 </head>
 
@@ -37,7 +39,11 @@
                 <br>
                 Our intuitive interface ensures that tasks are organized and easily retrievable, saving you valuable time and maximizing productivity. Experience the convenience of locating tasks instantly, empowering you to stay focused and achieve more
                 </div>
+                <div class="card-icon">
+                    <image src="./images/filter.png"></image>
+                </div>
             </div>
+
             <div class="card-container">
                 <h2>Organize</h2>
                 <div class="card-text-paragraph">
@@ -45,7 +51,11 @@
                 <br>
                 From appointments to deadlines, our intuitive platform empowers you to arrange and manage your time effectively. Experience the freedom of a well-structured schedule, allowing you to stay on track and accomplish your goals with confidence
                 </div>
+                <div class="card-icon">
+                    <image src="./images/organize.png"></image>
+                </div>
             </div>
+
             <div class="card-container">
                 <h2>Collab</h2>
                 <div class="card-text-paragraph">
@@ -53,9 +63,13 @@
                 <br>
                 collaboration regardless of distance. Empower your team to achieve collective goals with ease, fostering productivity and innovation
                 </div>
+                <div class="card-icon">
+                    <image src="./images/collaborate.png"></image>
+                </div>
             </div>
         </div>
     </section>
+    <?php include('./footer.php'); ?>
 </body>
 
 </html>

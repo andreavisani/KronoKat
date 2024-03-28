@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Stretch'; /* Name your font */
+    src: url('../fonts/stretch_pro/StretchPro.otf') format('opentype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Louie'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Light.ttf') format('truetype'); /* Specify the path to your font file */
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    min-height: 200px;
+    background: rgb(0, 0, 0);
+}
+.footer-text {
+   color:rgb(160, 76, 135); 
+   font-family: "Stretch";
+}
+
+.final-copyright {
+    margin-top: 10px;
+    color:rgb(255, 255, 255); 
+    font-family: "Louie";
+}

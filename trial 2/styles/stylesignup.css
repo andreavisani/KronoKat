@@ -82,7 +82,7 @@ button {
 button[type="submit"]{
     width: auto;
     padding: 10px 35px;
-    background-color: #20152f;
+    background-color: #5b0e4f;
     color: white;
     border: none;
     border-radius: 5px;
@@ -91,7 +91,7 @@ button[type="submit"]{
 }
 
 button[type="submit"]:hover{
-    background-color: #aea2c0;
+    background-color: #951782
 }
 
 .error-message {
