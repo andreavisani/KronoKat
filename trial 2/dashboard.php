@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 
@@ -65,19 +63,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     <title>Hello there!</title>
 </head>
+
 <body>
     <script src="./js/sort.js" defer></script>
 
     <div style="display: flex; justify-content: space-around; gap: 2rem;">
 
-        <!-- DEADLINE -->
+        <!-- DEADLINE ELEMENT -->
         <div class="element-container" id="daily-view">
                 
             <div id="myDIV" class="header">
                 <h2>DEADLINE</h2>
-                
-                <button id="openPopup">New Taks</button>
-                <div id="popup" class="popup" style="display: none; /* Initially hide the popup */
+                <button id="openPopup">New Taks</button> <!-- WHEN CLICKING THIS BUTTON, THE POPUP WILL POP UP :) -->
+            </div>
+
+            <!--- POP UP FOR ADDING NEW TASK, INITIALLY HIDDEN  ---->
+            <div id="popup" class="popup" style="display: none; /* Initially hide the popup */
                                                     position: fixed;
                                                     top: 50%;
                                                     left: 50%;
@@ -86,23 +87,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     border: 1px solid black;
                                                     padding: 20px;
                                                     z-index: 999;">
-                    <form action="dashboard.php" method="POST" style="padding: 1rem; display: grid; grid-template-columns: 2; gap: 0.5rem;">
-                        <label class="col1" for="name">Name:</label>
-                        <input class="col2" type="text" id="name" name="name" required>
-                        <label class="col1" for="location">Location:</label>
-                        <input class="col2" type="text" id="location" name="location" >
-                        <label class="col1" for="description">Description:</label>
-                        <input class="col2" type="text" id="description" name="description" >
-                        <label class="col1" for="start_date">Start date</label>
-                        <input class="col2" type="datetime-local" id="start_date" name="start_date" required/>
-                        <label class="col1" for="due_date">Due date</label>
-                        <input class="col2" type="datetime-local" id="due_date" name="due_date" required/>
-                        <input class="col1" id="create_task" type="submit" value="Create new task">
-                        <input class="col2" id="reset_task" type="reset" value="Reset">
-                    </form>
-                </div>
-                
+                <form action="dashboard.php" method="POST" style="padding: 1rem; display: grid; grid-template-columns: 2; gap: 0.5rem;">
+                    <label class="col1" for="name">Name:</label>
+                    <input class="col2" type="text" id="name" name="name" required>
+                    <label class="col1" for="location">Location:</label>
+                    <input class="col2" type="text" id="location" name="location" >
+                    <label class="col1" for="description">Description:</label>
+                    <input class="col2" type="text" id="description" name="description" >
+                    <label class="col1" for="start_date">Start date</label>
+                    <input class="col2" type="datetime-local" id="start_date" name="start_date" required/>
+                    <label class="col1" for="due_date">Due date</label>
+                    <input class="col2" type="datetime-local" id="due_date" name="due_date" required/>
+                    <input class="col1" id="create_task" type="submit" value="Create new task">
+                    <input class="col2" id="reset_task" type="reset" value="Reset">
+                </form>
             </div>
+
+            <!--- QUERY TO SELECT ALL THE TASKS ASSOCIATED WITH THIS USER (ID TAKEN FROM SESSION) ---->
             <?php 
                 $sql = "SELECT tasks.*, IFNULL(projects.name, '') AS 'project' 
                         FROM tasks 
@@ -110,35 +111,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         LEFT JOIN projects ON tasks.project_id = projects.id 
                         WHERE users_tasks.user_id = '$user_id'
                         ORDER BY tasks.due_date ASC;";
-                //echo $sql;
                 $result_set = mysqli_query($mysqli,$sql);
             ?>
-                <div style="padding: 10px;">
-                    <div style="display: flex; justify-content: space-between;">
-                        <span style="margin-left: 20px; font-size: 18px; font-weight: bold;">Name</span>
-                        <span style="margin-right: 20px; font-size: 18px; font-weight: bold; cursor: pointer;" onclick="reverseSort()">
-                            Due date <img id="sort-date" src="./images/apps-sort.png" style="width: 20px; vertical-align: middle;">
-                        </span> 
-                    </div>
+            
+            <!-- HEADER ROW FOR TASKS -->
+            <div style="padding: 10px;">
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="margin-left: 20px; font-size: 18px; font-weight: bold;">Name</span>
+                    <span style="margin-right: 20px; font-size: 18px; font-weight: bold; cursor: pointer;" onclick="reverseSort()">
+                        Due date <img id="sort-date" src="./images/apps-sort.png" style="width: 20px; vertical-align: middle;">
+                    </span> 
                 </div>
-                <ul id="task-list">
-                    <?php $index = 0; ?>
-                    <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
-                        <li class="task-item" data-index="<?php echo $index; ?>">
-                            <div style="display: flex; justify-content: space-between; padding-right: 20px;">
-                                <p><?php echo $results['name']; ?></p>
-                                <p><?php 
-                                    // Convert due date timestamp to date and hour-minutes format without seconds and year
-                                    $dueDate = date("M. d   H:i", strtotime($results['due_date']));
-                                    echo $dueDate; ?>
-                                </p>
-                            </div>
-                            <a class="close" href="<?php echo "deleteTask.php?id=" . $results['id']; ?>">×</a>  
-                        </li>
-                        <?php $index++; ?>
-                    <?php } ?>                
-                </ul>
+            </div>
 
+            <!-- LIST CONTAINING THE DATA RETURNED BY THE SQL QUERY -->
+            <ul id="task-list">
+                <?php $index = 0; ?>
+                <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
+                    <li class="task-item" data-index="<?php echo $index; ?>">
+                        <div style="display: flex; justify-content: space-between; padding-right: 20px;">
+                            <p><?php echo $results['name']; ?></p>
+                            <p><?php 
+                                // Convert due date timestamp to date and hour-minutes format without seconds and year
+                                $dueDate = date("M. d   H:i", strtotime($results['due_date']));
+                                echo $dueDate; ?>
+                            </p>
+                        </div>
+                        <a class="close" href="<?php echo "deleteTask.php?id=" . $results['id']; ?>">×</a>  
+                    </li>
+                    <?php $index++; ?>
+                <?php } ?>                
+            </ul>
         </div>
     </div>
 
@@ -159,15 +162,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         });
     });
 
-    // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-    }
-    }
     
     // Add a "checked" symbol when clicking on a list item
     var list = document.querySelector('ul');
