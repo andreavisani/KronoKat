@@ -115,8 +115,6 @@ button[type="submit"] {
     background-color: #FFB6C1; /* Change background color to rgba value with 72% opacity when hovered */
 }
 
-/* begin styling of container boxes */ 
-
 .container {
     padding-top: 10px;
     padding-left: 10px;
@@ -125,14 +123,16 @@ button[type="submit"] {
 }
 
 .big-box {
-    flex: 1; /* Take up half of the container */
-    min-width: 50%; /* Minimum width for the big box */
-    min-height: 100vh; /* Minimum height for the big box to fill the viewport */
+    flex: 1;
+    min-width: 50%;
+    min-height: 100vh;
     border-radius: 30px;
-    background-color: #98FB98; /* Pale green color */
     padding: 30px;
-}
-
+    flex-direction: column;
+    background-image: url('../images/dashboardimg.jpg'); /* Replace 'your-image-url.jpg' with the URL or path to your image */
+    background-size: cover; /* Scale the background image to cover the entire container */
+    background-position: center; /* Center the background image */
+  }
 .small-boxes {
     flex: 1; /* Take up half of the container */
     display: flex;
@@ -145,7 +145,7 @@ button[type="submit"] {
     min-width: 50%; /* Minimum width for each small box */
     min-height: 50vh; /* Minimum height for each small box */
     border-radius: 30px;
-    background-color: #FFB6C1; /* Light pink color */
+    background-color: #000000; /* Light pink color */
     padding: 30px;
     margin-bottom: 20px; /* Spacing between small boxes */
 }

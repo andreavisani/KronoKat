@@ -34,7 +34,7 @@
 
     
     // Add a "checked" symbol when clicking on a list item
-    var list = document.querySelector('ul');
+    var list = document.getElementById('task-list');
     list.addEventListener('click', function(ev) {
         // Check if the clicked target is either the <li> or one of its children
         var clickedElement = ev.target;
