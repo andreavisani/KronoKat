@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'Louie'; /* Name your font */
+  src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Bold.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+.element-container {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.406); /* Adjust the background color and transparency */
+  border-radius: 30px;
+  min-height: 600px;
+  font-family: "Louie", sans-serif; /* Use the Louie font */
+  font-size: 20px;
+  color: white;
+}
+
+#daily-view {
+  grid-column: 1 / span 6;
+  grid-row: 3 / span 8;
+}
+
+#mydiv h2 {
+  font-size: 24px; /* Increase the font size */
+  margin-bottom: 20px; /* Add some space below the header */
+}
+
+/* Rest of your CSS styles */
+
+/* Additional styles for the form and task list */
+
+#popup form {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+#popup label {
+  font-size: 16px;
+}
+
+#task-list {
+  margin-top: 20px; /* Add some space above the task list */
+}
+
+.task-item {
+  padding: 12px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.task-item p {
+  margin: 0; /* Remove default margin for paragraphs */
+}
+
+.task-item .close {
+  padding: 8px 12px;
+}
+
+.task-item:hover {
+  background: #ddd;
+}
+
+
+.clock {
+  font-family: 'Louie';
+  font-size: 200px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  margin: 0 auto; /* Center the clock */
+  margin-bottom: auto; /* Pushes the clock to the top */
+}
+
+#openPopup {
+  font-family: "Louie", sans-serif; /* Use the Louie font */
+  font-size: 20px;  /* Make the font bigger */
+  border-radius: 40px;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 30px;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}
+
+#popup form {
+  display: grid;
+  gap: 10px;
+}
+
+#popup label {
+  font-size: 18px;
+  color: #000;
+}
+
+#popup input[type="text"],
+#popup input[type="datetime-local"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#popup input[type="submit"],
+#popup input[type="reset"] {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff; /* Blue color for buttons */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#popup input[type="submit"]:hover,
+#popup input[type="reset"]:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+#create_task{
+  margin-top: 10px;
+}
