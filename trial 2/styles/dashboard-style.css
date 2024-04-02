@@ -151,3 +151,38 @@ ul {
     grid-column: 2;
 }
 
+/* begin styling of container boxes */ 
+
+.container {
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.big-box {
+  flex: 1; /* Take up half of the container */
+  min-width: 50%; /* Minimum width for the big box */
+  min-height: 100vh; /* Minimum height for the big box to fill the viewport */
+  border-radius: 30px;
+  background-color: #98FB98; /* Pale green color */
+  padding: 30px;
+}
+
+.small-boxes {
+  flex: 1; /* Take up half of the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px; /* Adjust padding as needed */
+}
+
+.small-box {
+  min-width: 50%; /* Minimum width for each small box */
+  min-height: 50vh; /* Minimum height for each small box */
+  border-radius: 30px;
+  background-color: #FFB6C1; /* Light pink color */
+  padding: 30px;
+  margin-bottom: 20px; /* Spacing between small boxes */
+}
+
