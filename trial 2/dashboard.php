@@ -21,6 +21,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" type="text/css" href="./styles/dashboard-style.css">
             <link rel="stylesheet" type="text/css" href="./styles/navbar-dashboard-style.css">
+            <link rel="stylesheet" type="text/css" href="./styles/search-popup.css">
             <title>Hello thereee!</title>
         </head>
         
@@ -38,12 +39,58 @@
             <div class="bar">
                 <div class="searchBx">
                     <div class="inputBx">
-                        <form action="./search.php" method="GET">
+                        <form action="./dashboard.php" method="GET">
                             <input type="text" name="search" placeholder="Search..">
                     </div>
-                    <button type="submit" name="submit-search">Search</button>
+                    <button type="submit" name="submit-search" id="openSearchPopup">Search</button>
                     </form>
                 </div>
+
+                <?php
+                    if (isset($_GET['submit-search'])) {
+                        $search = mysqli_real_escape_string($mysqli, $_GET['search']);
+                        $sql = "SELECT * FROM tasks 
+                                INNER JOIN users_tasks ON tasks.id = users_tasks.task_id
+                                WHERE (tasks.name LIKE '%$search%' 
+                                    OR tasks.location LIKE '%$search%' 
+                                    OR tasks.description LIKE '%$search%')
+                                AND users_tasks.user_id = '$user_id'
+                                ORDER BY tasks.due_date ASC;";
+                        $result = mysqli_query($mysqli, $sql);
+                        $queryResult = mysqli_num_rows($result);
+
+                        echo "<div id='search-popup' style='display: block; /* show the popup */
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: white;
+                        border: 1px solid black;
+                        padding: 20px;
+                        z-index: 999;
+                        height: 80vh; 
+                        overflow-y: auto;'>";
+                        
+                        if ($queryResult > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<div class=\"card\"> 
+                                    <h3>" . $row['name'] . "</h3>
+                                    <P><image class='icon' src='./images/location.png' alt='Location Icon'>   " . $row['location'] . "</p>
+                                    <P><image class='icon' src='./images/information.png' alt='info Icon' >   " . $row['description'] . "</p>
+                                    <P><image class='icon' src='./images/start-date.png' alt='start date Icon'>   " . $row['start_date'] . "</p>
+                                    <P><image class='icon' src='./images/due-date.png' alt='due date Icon'>   " . $row['due_date'] . "</p>
+                                    </div>";
+                            }
+                        } else {
+                            echo "There are no results matching your search!";
+                        }
+                        
+                        echo "</div>";
+                    }
+                    ?>
+                
+                
+            
     
                 <div class="logout">
                 <a href="index.php">
@@ -147,7 +194,7 @@
                         <?php } ?>                
                     </ul>
                 </div>
-            </div>
+            </div>           
         
         
         </body>

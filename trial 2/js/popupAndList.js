@@ -1,5 +1,6 @@
-    /* SHOW THE POPUP */
+    /* MANAGE POPUPS */
     document.addEventListener('DOMContentLoaded', function() {
+        /***************** NEW TASK POPUP *****************/
         var openPopupButton = document.getElementById('openPopup');
         var popup = document.getElementById('popup');
         
@@ -13,6 +14,22 @@
                 popup.style.display = 'none';
             }
         });
+        /***************** END NEW TASK POPUP *****************/
+
+        /***************** SEARCH POPUP *****************/
+        // NB: DISPLAY IS MANAGED BY PHP
+        var openSearch = document.getElementById('openSearchPopup');
+        var searchPopup = document.getElementById('search-popup');
+
+        document.addEventListener('click', function(event) {
+            if (!searchPopup.contains(event.target) && event.target !== openSearch) {
+                searchPopup.style.display = 'none';
+            }
+        });
+        /***************** END SEARCH POPUP *****************/
+
+
+
     });
 
     
