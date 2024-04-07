@@ -1,4 +1,5 @@
-    /* MANAGE POPUPS */
+
+                          /* MANAGE POPUPS */
     document.addEventListener('DOMContentLoaded', function() {
         /***************** NEW TASK POPUP *****************/
         var openPopupButton = document.getElementById('openPopup');
@@ -16,7 +17,13 @@
         });
         /***************** END NEW TASK POPUP *****************/
 
-        /***************** SEARCH POPUP *****************/
+      /***************** SEARCH POPUP, CLOSE *****************/
+        // Function to clear the URL from any previous GET parameters
+        function clearURL() {
+            window.history.replaceState(null, '', window.location.pathname);
+            // credits to https://stackoverflow.com/questions/22753052/remove-url-parameters-without-refreshing-page
+        }
+
         // NB: DISPLAY IS MANAGED BY PHP
         var openSearch = document.getElementById('openSearchPopup');
         var searchPopup = document.getElementById('search-popup');
@@ -24,10 +31,10 @@
         document.addEventListener('click', function(event) {
             if (!searchPopup.contains(event.target) && event.target !== openSearch) {
                 searchPopup.style.display = 'none';
+                clearURL();
             }
         });
         /***************** END SEARCH POPUP *****************/
-
 
 
     });
@@ -46,3 +53,5 @@
             clickedElement = clickedElement.parentNode;
         }
     }, false);
+
+    

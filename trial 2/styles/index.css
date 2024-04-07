@@ -146,14 +146,79 @@ body {
     object-fit: contain; /* Scale the image to fit inside the container while preserving aspect ratio */
     margin-inline: auto;
 }
-/* Responsive design */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1140px) {
     .features_container {
-        flex-direction: column; /* Stack features and KronoKat content vertically on small screens */
-        align-items: flex-start; /* Align items to the start */
+        width: 90%; /* Adjust width for screens up to 1140 pixels */
+    }
+    .features {
+        font-size: 14px; /* Adjust font size for screens up to 1140 pixels */
     }
 
-    #kronokat_container {
-        padding: 20px 0; /* Adjust padding for better spacing */
+    #kronokat_container h1 {
+        font-size: 70px; /* Adjust heading font size for screens up to 1140 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 20px; /* Adjust paragraph font size for screens up to 1140 pixels */
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .features_container {
+        width: 95%; /* Adjust width for screens up to 750 pixels */
+    }
+    .features {
+        font-size: 12px; /* Adjust font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container h1 {
+        font-size: 20px; /* Adjust heading font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 11px; /* Adjust paragraph font size for screens up to 750 pixels */
+    }
+}
+
+@media only screen and (max-width: 1017px) {
+    .features_container {
+        width: 95%; /* Adjust width for screens up to 750 pixels */
+    }
+    .features {
+        font-size: 12px; /* Adjust font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container h1 {
+        font-size: 38px; /* Adjust heading font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 15px; /* Adjust paragraph font size for screens up to 750 pixels */
+    }
+}
+
+
+@media only screen and (max-width: 580px) {
+    .features_container {
+        width: 95%; /* Adjust width for screens up to 750 pixels */
+    }
+    .features {
+        font-size: 12px; /* Adjust font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container h1 {
+        font-size: 15px; /* Adjust heading font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 9px; /* Adjust paragraph font size for screens up to 750 pixels */
+    }
+}
+
+@media only screen and (max-width: 1016px) {
+
+    .page-containers {
+        flex-direction: column; /* Stack page containers vertically on screens up to 1016 pixels */
+        align-items: center; /* Align items to the start */
     }
 }

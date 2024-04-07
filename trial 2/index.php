@@ -1,3 +1,9 @@
+<?php 
+session_start();
+$_SESSION = array(); 
+session_destroy(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,6 +75,7 @@
             </div>
         </div>
     </section>
+    
     <?php include('./footer.php'); ?>
 </body>
 

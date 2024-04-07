@@ -1,25 +1,30 @@
+@font-face {
+    font-family: 'Louie'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Bold.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
 .card {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: black;
     width: 300px;
     /*height: 200px;*/
     border-radius: 10px;
     margin: 10px;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: "Louie";
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .icon {
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
     margin-right: 20px;
 }
 
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
-background: #188d01;
+background: #60b98b;
 color: #ffffff;
 text-decoration: line-through;
 }
@@ -36,4 +41,5 @@ left: 16px;
 transform: rotate(45deg);
 height: 15px;
 width: 7px;
+transition: 0.3s ease-in-out;
 }
