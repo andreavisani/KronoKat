@@ -8,10 +8,10 @@
   margin-bottom: 40px;
   background-color: rgba(0, 0, 0, 0.646); /* Adjust the background color and transparency */
   border-radius: 30px;
-  min-height: 460px; /* Adjust the min-height as needed */
   font-family: "Louie", sans-serif; /* Use the Louie font */
   font-size: 20px;
   color: white;
+  overflow-y: auto; /* scrolling Y  */
 }
 
 
@@ -65,7 +65,7 @@
 
 .clock {
   font-family: 'Louie';
-  font-size: 200px;
+  font-size: 7rem;
   text-align: center;
   border-radius: 10px;
   width: 500px;

@@ -21,7 +21,6 @@
 }
 
 body {
-    height: 100vh;
     display: flex; /* Use flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -31,6 +30,7 @@ body {
 
 /* Container */
 .formcontainer {
+    margin-block: 50px;
     width: 400px;
     padding: 20px;
     background-color: #f0f0f0;
@@ -47,8 +47,7 @@ body {
 
 /* Form elements */
 .textfield {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 5px;
 }
 
 .formcontainer label {

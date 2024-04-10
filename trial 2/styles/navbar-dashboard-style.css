@@ -3,9 +3,9 @@
     text-decoration: none;
 }
 
-body, html {
-    height: 100%;
-    overflow: hidden;
+body{
+    height: 90vh;
+    overflow: auto;
 }
 
 @font-face {
