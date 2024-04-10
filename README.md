@@ -15,7 +15,7 @@ KronoKat is a task manager web application designed for efficient task creation 
 - Download and install XAMPP Control Panel (https://www.apachefriends.org/download.html)
 - Start the Apache and MySQL modules.
 - Create the database by opening the admin page for MySQL and import the file database.sql that you downloaded from this repository. Be sure that the database name is **kronokat**
-- Open the admin page for Apache and go to the **htdocs** folder. Create a new folder inside and download all the files from the repository inside that folder.
+- Within XAMPP, open the Explorer on the right e and go to the **htdocs** folder. Create a new folder inside named **kronokat** and download all the files from the repository inside that folder.
 
 
 ## Authors:
