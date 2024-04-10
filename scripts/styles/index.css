@@ -1,0 +1,224 @@
+/* Reset some default margin and padding */
+@font-face {
+    font-family: 'Stretch'; /* Name your font */
+    src: url('../fonts/stretch_pro/StretchPro.otf') format('opentype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Munday'; /* Name your font */
+    src: url('../fonts/the_munday/Themundayfreeversion-Regular.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Louie'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Light.ttf') format('truetype'); /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Hack'; /* Name your font */
+    src: url('../fonts/hack/Hack-Italic.ttf') format('truetype'); /* Specify the path to your font file and format */
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Set a light background color */
+    color: #333; /* Set default text color */
+}
+
+/* Styling for Home section */
+.Home {
+    color: #fff; /* Set text color to white */
+    height: 100vh; /* Set the height of the section to 100% of the viewport height */
+    background-image: url('../images/bgfinal.jpg'); /* Specify the path to your background image */
+    background-size: cover; /* Cover the entire section with the background image */
+    background-position: center; /* Center the background image */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    text-align: center; /* Center the text horizontally */
+}
+
+
+.features_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 0 auto; /* Center the container horizontally */
+    transition: transform 0.35s ease-out; /* Smooth transition */
+    height: 350px;
+}
+
+
+
+.features {
+    background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white background */
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: #242424;
+    font-family: 'Louie';
+    font-size: 16px;
+}
+
+#kronokat_container {
+    flex: 1; /* Take remaining space */
+    padding: 20px 20px; /* Add some padding for better spacing */
+}
+
+#kronokat_container h1 {
+    font-size: 90px;
+    font-family: "Stretch";
+    color: #000000;
+}
+
+#kronokat_container p {
+    font-size: 25px;
+    font-family: 'Louie';
+    color: #242424;
+}
+
+/* Styling for About section */
+.About {
+    background: rgb(0, 0, 0);
+}
+
+.page-containers {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card-container {
+    background-color: #000000f1;
+    padding: 20px;
+    margin: 60px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    height: 550x;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out; /* Add a transition effect for smooth scaling */
+    overflow: hidden;
+}
+
+.card-container:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+}
+
+
+.card-container h2 {
+    color: rgb(160, 76, 135); 
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Louie';
+    font-size: 50px;
+}
+
+.card-text-paragraph {
+    margin-top: 40px;
+    color: #ffffff; /* Set paragraph text color */
+    font-family: "Louie";
+}
+
+.card-icon {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon img {
+    max-width: 60%; /* Set maximum width to 100% of the container */
+    max-height: 60%; /* Set maximum height to 100% of the container */
+    object-fit: contain; /* Scale the image to fit inside the container while preserving aspect ratio */
+    margin-inline: auto;
+}
+@media only screen and (max-width: 1140px) {
+    .features_container {
+        width: 90%; /* Adjust width for screens up to 1140 pixels */
+    }
+    .features {
+        font-size: 14px; /* Adjust font size for screens up to 1140 pixels */
+    }
+
+    #kronokat_container h1 {
+        font-size: 70px; /* Adjust heading font size for screens up to 1140 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 20px; /* Adjust paragraph font size for screens up to 1140 pixels */
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .features_container {
+        width: 95%; /* Adjust width for screens up to 750 pixels */
+    }
+    .features {
+        font-size: 12px; /* Adjust font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container h1 {
+        font-size: 20px; /* Adjust heading font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 11px; /* Adjust paragraph font size for screens up to 750 pixels */
+    }
+}
+
+@media only screen and (max-width: 1017px) {
+    .features_container {
+        width: 95%; /* Adjust width for screens up to 750 pixels */
+    }
+    .features {
+        font-size: 12px; /* Adjust font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container h1 {
+        font-size: 38px; /* Adjust heading font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 15px; /* Adjust paragraph font size for screens up to 750 pixels */
+    }
+}
+
+
+@media only screen and (max-width: 580px) {
+    .features_container {
+        width: 95%; /* Adjust width for screens up to 750 pixels */
+    }
+    .features {
+        font-size: 12px; /* Adjust font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container h1 {
+        font-size: 15px; /* Adjust heading font size for screens up to 750 pixels */
+    }
+
+    #kronokat_container p {
+        font-size: 9px; /* Adjust paragraph font size for screens up to 750 pixels */
+    }
+}
+
+@media only screen and (max-width: 1016px) {
+
+    .page-containers {
+        flex-direction: column; /* Stack page containers vertically on screens up to 1016 pixels */
+        align-items: center; /* Align items to the start */
+    }
+}

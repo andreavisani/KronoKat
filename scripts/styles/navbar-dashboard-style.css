@@ -1,0 +1,356 @@
+/* Add your CSS styles here */
+* {
+    text-decoration: none;
+}
+
+body{
+    height: 90vh;
+    overflow: auto;
+}
+
+@font-face {
+    font-family: 'Stretch';
+    src: url('../fonts/stretch_pro/StretchPro.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Louie'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Bold.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+.navbar {
+    padding: 3px 3px;
+}
+
+.holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo a h1 {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    font-family: 'Stretch';
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-radius: 80px; /* Remove border-radius to have sharp corners */
+    padding: 10px 10px; /* Adjust padding as needed */
+    width: 80%; /* Make the bar span the entire width of the screen */
+}
+
+
+.searchBx {
+    display: flex;
+    align-items: center;
+}
+
+.inputBx {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.inputBx input[type="text"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+    font-family: 'Louie', cursive;
+}
+
+.inputBx input[type="text"]::placeholder {
+    color: #999;
+    font-family: 'Louie', cursive;
+}
+
+button[type="submit"] {
+    background-color: white;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    margin-left: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Louie', cursive;
+}
+
+.logout {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 90px;
+    height: 39px;
+    cursor: pointer;
+    font-family: "Louie";
+}
+
+.logout button {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 90px;
+    height: 39px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+.logout button:hover {
+    background-color: #c395f4; /* Change background color to rgba value with 72% opacity when hovered */
+}
+
+.container {
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.big-box {
+    flex: 1;
+    min-width: 50%;
+    height: 770px;  
+    border-radius: 30px;
+    padding: 30px;
+    flex-direction: column;
+    background-image: url('../images/bgfinal.jpg'); /* Replace 'your-image-url.jpg' with the URL or path to your image */
+    background-size: cover; /* Scale the background image to cover the entire container */
+    background-position: center; /* Center the background image */
+}
+
+.big-box * {
+    user-select: none; /* Prevent content inside big-box from being draggable */
+}
+
+.small-boxes {
+    flex: 1; /* Take up half of the container */
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px; /* Adjust padding as needed */
+    padding-bottom: 3px;
+    justify-content: space-around; 
+    height: 830px;
+}
+
+.small-box {
+    min-width: 50%; /* Minimum width for each small box */
+    border-radius: 30px;
+    background-color: #000000; /* Light pink color */
+    padding: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    min-height: 360px;
+}
+#task-item a {
+    font-size: 600px;
+}
+
+/* Define transition for the popup */
+.popup-container {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 999;
+    height: 80vh; 
+    overflow-y: auto;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-out; /* Smooth transition */
+}
+
+/* Show the popup when it's displayed */
+#search-popup.show {
+    opacity: 1;
+}
+
+.popup-container::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width: 1456px) {
+    /* Adjustments for extra small devices */
+    .logo img {
+        height: 30px; /* Decrease logo height further */
+    }
+
+    .logo a h1 {
+        font-size: small; /* Decrease font size further */
+    }
+
+}
+
+@media only screen and (max-width: 1190px) {
+    /* Adjustments for extra small devices */
+    .bar {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 1180px) {
+    /* Adjustments for extra small devices */
+    .bar {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width: 817px) {
+    /* Adjustments for extra small devices */
+    .bar {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (max-width: 610px) {
+    /* Adjustments for extra small devices */
+    .bar {
+        width: 55%;
+    }
+
+}
+
+@media only screen and (max-width: 613px) {
+    /* Adjustments for extra small devices */
+    .logout button {
+        width: 80px;
+        height: 39px;
+    }
+
+    .inputBx {
+        width: 80%; /* Adjust width as needed */
+    }
+
+    button#openSearchPopup {
+        width: 100px; /* Adjust width as needed */
+    }
+}
+
+/* Additional media queries for smaller screen sizes */
+@media only screen and (max-width: 480px) {
+    /* Adjustments for even smaller devices */
+    .inputBx {
+        width: 70%; /* Adjust width as needed */
+    }
+
+    button#openSearchPopup {
+        width: 90px; /* Adjust width as needed */
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    /* Adjustments for very small devices */
+    .inputBx {
+        width: 60%; /* Adjust width as needed */
+    }
+
+    button#openSearchPopup {
+        width: 80px; /* Adjust width as needed */
+    }
+}
+
+@media only screen and (max-width: 558px) {
+    /* Hide logout button */
+    .logout {
+        display: none;
+    }
+
+    /* Adjustments for even smaller devices */
+    .inputBx {
+        width: 70%; /* Adjust width as needed */
+    }
+
+    button#openSearchPopup {
+        width: 90px; /* Adjust width as needed */
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+
+    /* Adjustments for even smaller devices */
+    .inputBx input{
+        max-width: 70px; /* Adjust width as needed */
+    }
+
+    .logo {
+        margin-left: 1px;
+    }
+
+    .bar {
+        margin-left: 5px;
+    }
+
+}
+
+/* media qury for small boxes */ 
+/* Media queries for responsiveness */
+
+
+@media screen and (max-width: 1430px) {
+    body {
+        overflow: auto; /* Allow overflow when viewport height is at least 600px */
+    }
+}
+
+
+@media screen and (max-width: 1430px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .small-boxes {
+        margin-top: 10px;
+        flex-direction: row;
+        max-width: 90%;
+    }
+
+    .small-box {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+
+}
+
+@media screen and (max-width: 1360px) {
+#double-box{
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+@media screen and (max-width: 1088px) {
+    .small-boxes {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    .small-box {
+        margin-top: 10px;
+        min-height: 600px;
+    }
+    }

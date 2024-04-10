@@ -1,0 +1,138 @@
+/* Reset some default margin and padding */
+@font-face {
+    font-family: 'Stretch'; /* Name your font */
+    src: url('../fonts/stretch_pro/StretchPro.otf') format('opentype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Munday'; /* Name your font */
+    src: url('../fonts/the_munday/Themundayfreeversion-Regular.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Louie'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Bold.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Big'; /* Name your font */
+    src: url('../fonts/bignoodletitling/big_noodle_titling.ttf') format('truetype'); /* Specify the path to your font file and format */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Set a white background color */
+}
+
+header {
+    background-color: lightgrey; /* Set a blue background color */
+    color: #fff; /* Set text color to white */
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex; /* Set display to flex */
+    justify-content: space-between; /* Align children items with space in between */
+    align-items: center; /* Align vertically centered */
+    padding: 15px 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgb(219, 219, 219) 19%, rgb(174, 89, 147) 72%);
+    position: fixed; /* Set the navbar to be fixed */
+    top: 0; /* Position it at the top of the viewport */
+    width: 100%; /* Set the width to fill the entire viewport */
+    z-index: 1000; /* Ensure the navbar appears above other content */
+    /* Add other styling properties as needed */
+}
+
+
+.logo a {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    font-family: 'Stretch';
+}
+
+.logo {
+    display: flex; /* Set display to flex */
+    align-items: center; /* Align vertically centered */
+}
+
+.logo img {
+    height: 40px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add spacing between image and text */
+}
+.navdiv-ul {
+    list-style: none;
+    display: flex;
+}
+
+.navdiv-ul li {
+    margin-right: 20px;
+}
+
+.navdiv-ul li:last-child {
+    margin-right: 0;
+}
+
+.navdiv-ul li a {
+    color: rgb(222, 222, 222); 
+    text-decoration: none;
+    font-size: 20px; 
+    transition: color 0.3s ease;
+    font-family: 'Louie';
+}
+
+.navdiv-ul li a:hover {
+    color: #563d56; /* Change color on hover */
+}
+
+.hamburger {
+    display: none; /* Hide hamburger menu by default */
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .navdiv-ul {
+        display: none; /* Hide nav links on small screens */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu on small screens */
+        cursor: pointer;
+    }
+}
+
+/* Hamburger menu animation */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+}
+
+.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+}

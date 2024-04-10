@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Stretch'; /* Name your font */
+    src: url('../fonts/stretch_pro/StretchPro.otf') format('opentype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Munday'; /* Name your font */
+    src: url('../fonts/the_munday/Themundayfreeversion-Regular.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Louie'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Light.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'LouieI'; /* Name your font */
+    src: url('../fonts/louis_george_cafe/Louis\ George\ Cafe\ Light\ Italic.ttf') format('truetype'), /* Specify the path to your font file */
+}
+
+* {
+    margin: 0px;
+    padding: 0%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+body {
+    height: 100vh;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgb(219, 219, 219) 19%, rgb(174, 89, 147) 72%);
+}
+
+.formcontainer {
+        width: 400px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        border: 3px solid #333; /* Thick border */
+}
+
+.formcontainer h1 {
+    text-align: center;
+    margin-bottom: 19px;
+    font-family: "Stretch"; 
+}
+
+.formcontainer label {
+    font-weight: bold;
+    font-family: "Louie";
+    margin-bottom: 2px;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+button[type="submit"]{
+    width: auto;
+    padding: 10px 35px;
+    background-color: #5b0e4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover{
+    background-color: #951782; 
+}
+
+em {
+    color: red;
+    font-family: "LouieI";
+}
